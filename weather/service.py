@@ -2,10 +2,9 @@ import requests
 
 API_KEY = "8ae25b1f361fa0f7543c15b1ab1fc643"
 
-
 def get_weather(city: str):
     try:
-        # Запит до OpenWeather API
+        # Request to OpenWeather API
         url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
         response = requests.get(url)
 
@@ -16,7 +15,7 @@ def get_weather(city: str):
             humidity = data['main']['humidity']
             wind_speed = data['wind']['speed']
 
-            # Формуємо відповідь
+            # Prepare the response
             weather_info = {
                 "city": city,
                 "temperature": temperature,
